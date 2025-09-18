@@ -314,7 +314,7 @@ Resources:
                   - ecr:DescribeRepositories
                   - ecr:DescribeImages
                   - ecr:GetDownloadUrlForLayer
-                Resource: !GetAtt ECRRepository.Arn
+                Resource: "*"
               - Effect: Allow
                 Action:
                   - s3:PutObject
