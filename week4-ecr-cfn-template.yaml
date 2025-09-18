@@ -311,12 +311,19 @@ Resources:
                   - ecr:CompleteLayerUpload
                   - ecr:PutImage
                   - ecr:BatchCheckLayerAvailability
+                  - ecr:DescribeRepositories
+                  - ecr:DescribeImages
+                  - ecr:GetDownloadUrlForLayer
                 Resource: !GetAtt ECRRepository.Arn
               - Effect: Allow
                 Action:
                   - s3:PutObject
+                  - s3:GetObject
                 Resource: !Sub arn:aws:s3:::${ArtifactBucket}/*
-
+              - Effect: Allow
+                Action:
+                  - s3:ListBucket
+                Resource: !Sub arn:aws:s3:::${ArtifactBucket}/*
 
   # IAM Role for ECS Task Execution
   ECSTaskExecutionRole:
