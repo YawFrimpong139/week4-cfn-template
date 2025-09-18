@@ -28,7 +28,7 @@ Parameters:
     Description: Private Subnet 2 CIDR
   AllowedGithubRepo:
     Type: String
-    Default: Yaw-Frimpong/ecs-fargate-application
+    Default: YawFrimpong139/ecsApplication
     Description: Allowed Github Repo
   AllowedGithubBranch:
     Type: String
