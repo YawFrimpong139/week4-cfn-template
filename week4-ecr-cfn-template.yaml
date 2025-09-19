@@ -330,6 +330,10 @@ Resources:
                 Action:
                   - s3:ListBucket
                 Resource: !Sub arn:aws:s3:::${ArtifactBucket}/*
+              - Effect: Allow
+                Action:
+                  - iam:PassRole
+                Resource: !GetAtt ECSTaskExecutionRole.Arn
 
   # IAM Role for ECS Task Execution
   ECSTaskExecutionRole:
